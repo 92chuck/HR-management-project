@@ -8,7 +8,7 @@ Provides simple and efficient onboarding and hiring process, and housing mangeme
 
 ## Video walkthrough :movie_camera:
 
-https://youtu.be/dXFDQKiP8zk](https://studio.youtube.com/video/agJ7L8glHLI/edit)
+ https://www.youtube.com/watch?v=agJ7L8glHLI
 
 ## Key Features :key:
 
