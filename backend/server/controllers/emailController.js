@@ -4,15 +4,12 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 const RegistrationToken = require('../models/RegistrationToken');
-const passwordForMAC = 'pmsyvtqjtnrutlyg';
-const passwordForPC = 'dzbbhumircagrgci';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL,
-    pass: passwordForMAC,
-    // pass: passwordForPC,
+    pass: process.env.passwordForMAC,
   },
 });
 exports.send_token = async (req, res) => {
@@ -85,5 +82,5 @@ exports.send_email = async (req, res) => {
     }
     console.log('sent: ' + info.response);
   });
-  res.json({ email: email })
-}
+  res.json({ email: email });
+};

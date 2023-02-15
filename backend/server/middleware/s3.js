@@ -1,20 +1,20 @@
-const aws = require('aws-sdk');
+const S3 = require('aws-sdk/clients/s3');
 const path = require('path');
 
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 
 // const region = "us-east-1";
-const bucketName = 'your AWS bucket name';
+const bucketName = process.env.AWS_BUCKET_NAME;
 const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
 const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+const region = process.env.AWS_REGION;
 
-aws.config.update({
+const s3 = new S3({
+  region,
   accessKeyId,
   secretAccessKey,
-  // "region": "us-east-1"
+  signatureVersion: 'v4',
 });
-
-const s3 = new aws.S3();
 
 async function generateUploadURL(fileName, fileType) {
   console.log('S3 Config = ', s3.config);
@@ -23,8 +23,6 @@ async function generateUploadURL(fileName, fileType) {
     Bucket: bucketName,
     Key: fileName,
     Expires: 40 * 60,
-    ACL: 'public-read',
-    ContentType: fileType,
   };
 
   // s3.getSignedUrl('putObject', params, async (error, url) => {
