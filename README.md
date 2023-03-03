@@ -7,6 +7,7 @@
 Provides simple and efficient onboarding and hiring process, and housing mangement for both employees and HR
 
 ## Video walkthrough :movie_camera:
+https://www.youtube.com/watch?v=mT1czbG2R0A
 
 
 ## Key Features :key:
