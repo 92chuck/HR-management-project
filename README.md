@@ -1,6 +1,6 @@
 # HR Managment Project
 
-<em>Group project with Aiden and Yizhou</em>
+<em>Full-stack (MEAN) web app for Human resource management</em>
 
 ## About HR Managment Project
 
